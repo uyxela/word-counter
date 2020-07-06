@@ -1,7 +1,7 @@
 {
-  "name": "react-setup",
+  "name": "word-counter",
   "version": "1.0.0",
-  "description": "React Webpack Babel setup",
+  "description": "Simple text editor with word and character count made with React, Slate.js, and styled-components",
   "main": "index.js",
   "homepage": ".",
   "scripts": {
@@ -13,7 +13,11 @@
   "license": "MIT",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "slate": "^0.58.3",
+    "slate-react": "^0.58.3",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",

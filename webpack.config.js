@@ -36,11 +36,11 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'React Webpack Babel Setup',
+            title: 'Word Counter',
             favicon: './src/favicon.ico',
             'meta': {
                 'viewport': 'width=device-width, initial-scale=1',
-                'description': 'React Webpack Babel setup'
+                'description': 'Simple text editor with word and character count made with React, Slate.js, and styled-components.'
             },
             template: './src/index.html'
         })

@@ -1,11 +1,12 @@
-# React Setup
-React Webpack Babel setup
+# Word Counter
+Simple text editor with word and character count made with React, Slate.js, and styled-components
 
 ## Features
 
-- CSS support
-- Image support
-- Font support
+- Word and character count
+- Toggle bold, italic, underline
+- Autosave
+- Neumorphic design with light and dark mode
 
 ## Usage
 
