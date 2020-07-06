@@ -1,5 +1,5 @@
 import React from 'react';
-import { Moon, Sun } from 'react-feather';
+import { Moon, Sun, GitHub } from 'react-feather';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -8,7 +8,7 @@ const Styles = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 48px;
+    padding: 36px;
 
     h1 {
         font-size: 2em;
@@ -20,6 +20,13 @@ const Styles = styled.div`
             font-size: 1.5em;
         }
     }
+`;
+
+const IconGroup = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 const IconWrapper = styled.div`
@@ -34,6 +41,7 @@ const IconWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 12px;
 
     :hover {
         box-shadow: var(--shadow);
@@ -67,17 +75,36 @@ const SunIcon = styled(Sun)`
     }
 `;
 
+const GitHubIcon = styled(GitHub)`
+    stroke: ${props => props.theme.colors.textColor};
+    fill: ${props => props.theme.colors.textColor};
+    width: 2em;
+    height: 2em;
+    transition: 1s;
+
+    @media (max-width: 768px) {
+        width: 1.5em;
+        height: 1.5em;
+    }
+`;
+
 function Header(props) {
     return (
         <Styles>
             <h1>Word Counter</h1>
-            <IconWrapper onClick={() => {
-                props.setDarkMode(!props.darkMode);
-                window.localStorage.setItem("darkMode", !props.darkMode);
-            }}>
-                {props.darkMode ? <SunIcon /> : <MoonIcon />}
-            </IconWrapper>
-
+            <IconGroup>
+                <IconWrapper onClick={() => {
+                    props.setDarkMode(!props.darkMode);
+                    window.localStorage.setItem("darkMode", !props.darkMode);
+                }}>
+                    {props.darkMode ? <SunIcon /> : <MoonIcon />}
+                </IconWrapper>
+                <IconWrapper onClick={() => {
+                    window.open("https://github.com/uyxela/word-counter");
+                }}>
+                    <GitHubIcon />
+                </IconWrapper>
+            </IconGroup>
         </Styles>
     )
 }
