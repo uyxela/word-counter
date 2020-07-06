@@ -18,6 +18,15 @@ function App() {
         window.localStorage.getItem("autosave") === "true" ? true : false
     );
 
+    if (window.localStorage.getItem("content") === null) {
+        window.localStorage.setItem("content", JSON.stringify([
+            {
+                type: 'paragraph',
+                children: [{ text: '' }],
+            },
+        ]));
+    }
+
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
             <Wrapper>
