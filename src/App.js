@@ -18,7 +18,7 @@ function App() {
         window.localStorage.getItem("autosave") === "true" ? true : false
     );
 
-    if (window.localStorage.getItem("content") === null) {
+    if (window.localStorage.getItem("content") === null || window.localStorage.getItem("autosave")) {
         window.localStorage.setItem("content", JSON.stringify([
             {
                 type: 'paragraph',
