@@ -111,17 +111,23 @@ function Toolbar(props) {
         <ToolbarWrapper>
             <IconButton
                 active={isMarkActive(editor, 'bold')}
-                onClick={() => toggleMark(editor, 'bold')}>
+                onClick={() => toggleMark(editor, 'bold')}
+                title="Bold"
+            >
                 <BoldIcon />
             </IconButton>
             <IconButton
                 active={isMarkActive(editor, 'italic')}
-                onClick={() => toggleMark(editor, 'italic')}>
+                onClick={() => toggleMark(editor, 'italic')}
+                title="Italic"
+            >
                 <ItalicIcon />
             </IconButton>
             <IconButton
                 active={isMarkActive(editor, 'underline')}
-                onClick={() => toggleMark(editor, 'underline')}>
+                onClick={() => toggleMark(editor, 'underline')}
+                title="Underline"
+            >
                 <UnderlineIcon />
             </IconButton>
             <IconButton
@@ -129,7 +135,9 @@ function Toolbar(props) {
                 onClick={() => {
                     window.localStorage.setItem("autosave", `${!props.autosave}`);
                     props.setAutosave(!props.autosave);
-                }}>
+                }}
+                title="Autosave"
+            >
                 <SaveIcon />
             </IconButton>
             
