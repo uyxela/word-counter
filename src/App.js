@@ -11,14 +11,14 @@ function App() {
     );
 
     if (window.localStorage.getItem("autosave") === null) {
-        window.localStorage.setItem("autosave", true);
+        window.localStorage.setItem("autosave", "true");
     }
 
     const [autosave, setAutosave] = useState(
         window.localStorage.getItem("autosave") === "true" ? true : false
     );
 
-    if (window.localStorage.getItem("content") === null || window.localStorage.getItem("autosave")) {
+    if (window.localStorage.getItem("content") === null || window.localStorage.getItem("autosave") === "false") {
         window.localStorage.setItem("content", JSON.stringify([
             {
                 type: 'paragraph',

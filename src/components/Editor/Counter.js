@@ -53,7 +53,13 @@ const CountValue = styled.p`
 const countWords = content => {
     let count = 0;
     content.forEach(value => {
-        count += value['children'][0]['text'].match(/\b[-?(\w+)?]+\b/gi) ? value['children'][0]['text'].match(/\b[-?(\w+)?]+\b/gi).length : 0;
+        let s = value['children'][0]['text'];
+        if (s.length != 0 && s.match(/\b[-?(\w+)?]+\b/gi)) {
+            s = s.replace(/(^\s*)|(\s*$)/gi, "");
+            s = s.replace(/[ ]{2,}/gi, " ");
+            s = s.replace(/\n /, "\n");
+            count += s.split(' ').length;
+        }
     });
     return count;
 }
@@ -72,8 +78,8 @@ function Counter(props) {
     const [charCount, setCharCount] = useState(0);
 
     useEffect(() => {
-        setWordCount(countWords(JSON.parse(window.localStorage.getItem('content'))));
-        setCharCount(countChars(JSON.parse(window.localStorage.getItem('content'))));
+        setWordCount(countWords(props.value));
+        setCharCount(countChars(props.value));
     }, [props.value])
 
     return (
