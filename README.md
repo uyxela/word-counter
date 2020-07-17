@@ -1,6 +1,10 @@
 # Word Counter
 
-Simple text editor with word and character count made with React, Slate.js, and styled-components
+Simple text editor with word and character count made with React, Slate.js, and styled-components.
+
+![Screenshot of Word Counter light mode](./images/wordcounter-light.png)
+
+![Screenshot of Word Counter dark mode](./images/wordcounter-dark.png)
 
 Check it out at [wordcounter.alexyu.ca](https://wordcounter.alexyu.ca)
 
